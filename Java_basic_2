@@ -1,0 +1,76 @@
+package java_basics;
+enum typeOfAccount{
+	SAVINGS,
+	CURRENT;
+}
+class BankAccount
+{
+	private int current_balance=0;
+	void addAmount(int amount)
+	{
+		current_balance+=amount;
+	}
+	void deductAmount(int amount)
+	{
+		if(amount>current_balance)
+		{
+			throw new ArithmeticException("Withdrawal amount is greater than current_balance.---Transaction Aborted---");
+		}
+		else
+		{
+			current_balance-=amount;
+		}
+	}
+}
+public abstract class Bank {
+        
+        abstract int getDetails();
+        abstract void printDetails();
+}
+
+class SBI extends Bank{
+	private String location;
+	private int rateOfInterest=7;
+	
+	public int getDetails()
+	{
+	      return rateOfInterest;	
+	}
+	void printDetails()
+	{
+		System.out.println("Rate of Interest at SBI: "+rateOfInterest+ "and location is : "+location);
+
+	}
+	
+}
+
+class BOI extends Bank{
+	private String location="India";
+	private int rateOfInterest=6;
+
+	public int getDetails()
+	{
+		return rateOfInterest;
+	}
+	void printDetails()
+	{
+		System.out.println("Rate of Interest at BOI: "+rateOfInterest+ "and location is : "+location);
+
+	}
+
+}
+
+class ICICI extends Bank{
+	private String location="India";
+	private int rateOfInterest=5;
+
+	public int getDetails()
+	{
+		return rateOfInterest;
+	}
+     void printDetails()
+     {
+ 		System.out.println("Rate of Interest at BOI: "+rateOfInterest+ "and location is : "+location);
+
+     }
+}
