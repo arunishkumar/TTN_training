@@ -1,0 +1,39 @@
+package collections;
+import java.util.*;
+class Employee
+{
+	String name;
+	int age;
+	String designation;
+	Employee(String name,int age,String designation)
+	{
+		this.name=name;
+		this.age=age;
+		this.designation=designation;
+	}
+	public String toString()
+	{
+		return "Name : "+name+" ,age : "+age+" ,designation : "+designation;
+	}
+	
+}
+public class Main {
+     public static void main(String[] args)
+     {
+    	 Employee E1=new Employee("Arunish",21,"JVM Trainee");
+    	 Employee E2=new Employee("Amaira",24,"AEM Trainee");
+    	 Employee E3=new Employee("Rohit",23,"Mean Trainee");
+    	 Employee E4=new Employee("Sachin",25,"QE Trainee");
+    	 Map<Employee, Integer> map=new HashMap<Employee, Integer>();
+    	 
+    	 map.put(E1, 25000);
+    	 map.put(E2, 20000);
+    	 map.put(E3, 18000);
+    	 map.put(E4, 15000);
+    	 
+    	 for(Employee key:map.keySet())
+    	 {
+    		 System.out.println(key+" ,salary: "+map.get(key));
+    	 }
+     }
+}
