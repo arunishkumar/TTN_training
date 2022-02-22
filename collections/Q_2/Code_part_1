@@ -1,0 +1,40 @@
+class Employee implements Comparable<Employee>
+{
+	String name;
+	double age;
+	double salary;
+	public Employee(String name,double age,double salary)
+	{
+		this.name=name;
+		this.age=age;
+		this.salary=salary;
+	}
+	public String toString()
+	{
+		return "Name : "+name+" Age : "+age+" salary : "+salary;
+	}
+	@Override
+	public int compareTo(Employee emp)
+	{
+		return name.compareTo(emp.name);
+	}
+}
+
+public class Main2
+{
+	public static void main(String[] args)
+	{
+		List<Employee> employees=new ArrayList<Employee>();
+		employees.add(new Employee("sunil gangwar",28,24000));
+        employees.add(new Employee("Rohit kumar",21,20000));
+        employees.add(new Employee("sunil shetty",25,18000));
+        employees.add(new Employee("Arunish kumar",21,25000));
+
+        Collections.sort(employees);
+        System.out.println("Names in sorted order are : ");
+        for(Employee emp:employees)
+        {
+        	System.out.println(emp);
+        }
+	}
+}
