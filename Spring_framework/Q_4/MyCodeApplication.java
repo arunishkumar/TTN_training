@@ -20,8 +20,8 @@ public class MyCodeApplication {
 		System.out.println(result);
 	
 		//display properties of one bean
-	
-        System.out.println(applicationContext.getBean("bubbleSort").getClass());
+        System.out.println(applicationContext.getDisplayName());
+        System.out.println(applicationContext.getId());
         
 	}
 
